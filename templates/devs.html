@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Developpeurs/Developer - Trigger Happy {% endblock %}
+
+{% block content %}
+<style>
+.trigger-happy-item-desc .lang {margin-left:40px;}
+.trigger-happy-item-desc .ui-tabs-hide {display: none;}
+
+.trigger-happy-item-desc .tabs-lang{
+  float:left;
+  list-style:none;
+  margin:0;
+  border-right:1px solid #849BB2;
+}
+
+.trigger-happy-item-desc .tabs-lang li{margin:0;}
+
+.trigger-happy-item-desc .tabs-lang a{
+  position:relative;
+  left:1px;
+  display: block;
+  padding:4px 4px 3px;
+  border:1px solid #EFF3F7;
+  border-right-color:#849BB2;
+  line-height:12px;
+  
+  opacity:0.6;
+  -moz-border-radius:5px 0 0 5px;
+  -webkit-border-radius:5px 0 0 5px; 
+  border-radius:5px 0 0 5px;
+}
+.trigger-happy-item-desc .tabs-lang li.ui-state-hover a, .trigger-happy-item-desc .tabs-lang li.ui-state-focus a{
+  opacity:1;
+}
+.trigger-happy-item-desc .tabs-lang li.ui-state-active a{
+  border:1px solid #849BB2;
+  border-right-color:#EFF3F7;
+  opacity:1;
+}
+</style>
+ 
+            <div class="jumbotron">
+                <h2>Trigger Happy</h2>
+                <div class="trigger-happy-item-desc section">
+                <ul class="tabs-lang">
+                    <li><a href="#desc_en_1" title="View the english description"><img alt="view the english description"  src="/static/images/gb.gif"/></a></li>
+                    <li><a href="#desc_fr_1" title="voir la description française"><img alt="voir la description française" src="/static/images/fr.gif"/></a></li>
+                </ul>
+                <div id="desc_en_1" class="desc lang">
+                <h3>How to get involved ?</h3>
+                <p>the source code of the project is available on <a href="https://github.com/foxmask/django-th" title="Github">GitHub</a>, where you could fork it, make your improvments, create new services (with django module) like Twitter, FourSquare, Reddit etc... to expand the project</p>
+                <p>If you find some <span class="label label-danger">issues</span> linked to the application, do not hesitate <a class="btn btn-danger" href="https://github.com/foxmask/django-th/issues/new" title="open a ticket">to submit a ticket</a> and provide the maximum of details</p>
+                <h3>Existing Modules</h3>
+                <p>the following services could be helpful to start your own module</p>
+                <ul>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_evernote">Evernote</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_github">GitHub</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_pocket">Pocket</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_readability">Readability</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_rss">RSS</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_trello">Trello</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_twitter">Twitter</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_wallabag">Wallabag</a></li>
+                </ul>
+                <p>A skelton module intended to be cloned to make your own Trigger Happy module named <a href="https://github.com/foxmask/django-th-dummy">django-th-dummy</a>, permits, with very few new lines of code <a href="https://foxmask.trigger-happy.eu/post/2013/12/09/trigger-happy-comment-pondre-son-propre-module/">to produce his little module home made with Trigger Happy (link in french)</a>, or if you prefer, you can use an even quicker way to bootstrap your new Trigger Happy module with <a href="https://github.com/foxmask/django-th-ansible">TriggerHappy Ansible</a></p>
+                </div>
+                 <div id="desc_fr_1" class="desc lang">
+                <h3>Comment participer ?</h3>
+                <p>Le code source du projet est disponible sur <a href="https://github.com/foxmask/django-th" title="Github">GitHub</a>, d'où vous pourrez le forker, pour apporter vos améliorations, créer de nouveaux services (via des modules Django) tels Twitter, FourSquare, Reddit etc... pour étoffer le projet</p>
+                <p>Si vous trouvez des <span class="label label-danger">problèmes</span> liés à l'application, n'hésitez pas à <a class="btn btn-danger" href="https://github.com/foxmask/django-th/issues/new" title="ouvrir un ticket">ouvrir des tickets</a> en les détaillant le plus possible</p>
+                <h3>Modules existants</h3>
+                <p>ces services pourront vous servir pour vous lancer dans la production de nouveaux modules à votre sauce</p>
+                <ul>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_evernote">Evernote</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_github">GitHub</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_pocket">Pocket</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_readability">Readability</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_rss">RSS</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_trello">Trello</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_twitter">Twitter</a></li>
+                    <li><a href="https://github.com/foxmask/django-th/tree/master/th_wallabag">Wallabag</a></li>
+                </ul>
+                <p>un module squelette, destiné à être cloné pour créer votre propre module Trigger Happy nommé <a href="https://github.com/foxmask/django-th-dummy">django-th-dummy</a>, permet en quelques petites modifications de <a href="https://foxmask.trigger-happy.eu/post/2013/12/09/trigger-happy-comment-pondre-son-propre-module/">produire son petit module maison avec Trigger Happy</a>, ou si vous préférez créer un module encore plus vite et simplement, vous disposez d'un module ansible qui vous permet de bootstraper aisement votre module TriggerHappy avec <a href="https://github.com/foxmask/django-th-ansible">TriggerHappy Ansible</a></p>
+                </div>
+                </div>
+            </div>
+
+{% endblock %}

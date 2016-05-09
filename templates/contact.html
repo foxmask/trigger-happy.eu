@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Trigger Happy{% endblock %}
+
+{% block content %}
+<style>
+.trigger-happy-item-desc .lang {margin-left:40px;}
+.trigger-happy-item-desc .ui-tabs-hide {display: none;}
+
+.trigger-happy-item-desc .tabs-lang{
+  float:left;
+  list-style:none;
+  margin:0;
+  border-right:1px solid #849BB2;
+}
+
+.trigger-happy-item-desc .tabs-lang li{margin:0;}
+
+.trigger-happy-item-desc .tabs-lang a{
+  position:relative;
+  left:1px;
+  display: block;
+  padding:4px 4px 3px;
+  border:1px solid #EFF3F7;
+  border-right-color:#849BB2;
+  line-height:12px;
+  
+  opacity:0.6;
+  -moz-border-radius:5px 0 0 5px;
+  -webkit-border-radius:5px 0 0 5px; 
+  border-radius:5px 0 0 5px;
+}
+.trigger-happy-item-desc .tabs-lang li.ui-state-hover a, .trigger-happy-item-desc .tabs-lang li.ui-state-focus a{
+  opacity:1;
+}
+.trigger-happy-item-desc .tabs-lang li.ui-state-active a{
+  border:1px solid #849BB2;
+  border-right-color:#EFF3F7;
+  opacity:1;
+}
+</style>
+ 
+            <div class="jumbotron">
+                <h2>Trigger Happy</h2>
+                <div class="trigger-happy-item-desc section">
+                <ul class="tabs-lang">
+                    <li><a href="#desc_en_1" title="View the english description"><img alt="view the english description"  src="https://trigger-happy.eu/static/images/gb.gif"/></a></li>
+                    <li><a href="#desc_fr_1" title="voir la description française"><img alt="voir la description française" src="https://trigger-happy.eu/static/images/fr.gif"/></a></li>
+                </ul>
+                <div id="desc_en_1" class="desc lang">
+                    <h3>You want to contact us ?</h3>
+                    <p>Mail us at <span class="label label-info">service @ trigger-happy dot eu</span>, and it will be a pleasure to answer you. </p>
+                </div>
+                <div id="desc_fr_1" class="desc lang">
+                    <h3>Vous souhaitez nous contacter ?</h3>
+                    <p>Ecrivez nous à <span class="label label-info">service @ trigger-happy point eu</span>, et nous nous ferons un plaisir de vous répondre. </p>
+                </div>
+            </div>
+    
+{% endblock %}

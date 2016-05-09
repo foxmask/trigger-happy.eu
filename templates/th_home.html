@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% if user.is_authenticated %}{% trans "My Triggers" %} - {{ user.username }} - Trigger Happy{% else %}{% trans "Home" %} - Trigger Happy{% endif %}{% endblock %}
+
+{% block content %}
+    {% include "introd.html" %}
+{% endblock %}

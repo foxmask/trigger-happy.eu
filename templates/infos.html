@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load django_th_extras %}
+
+{% block title %}Informations sur le service/Service Informations - Trigger Happy{% endblock %}
+
+{% block content %}
+<style>
+.trigger-happy-item-desc .lang {margin-left:40px;}
+.trigger-happy-item-desc .ui-tabs-hide {display: none;}
+
+.trigger-happy-item-desc .tabs-lang{
+  float:left;
+  list-style:none;
+  margin:0;
+  border-right:1px solid #849BB2;
+}
+
+.trigger-happy-item-desc .tabs-lang li{margin:0;}
+
+.trigger-happy-item-desc .tabs-lang a{
+  position:relative;
+  left:1px;
+  display: block;
+  padding:4px 4px 3px;
+  border:1px solid #EFF3F7;
+  border-right-color:#849BB2;
+  line-height:12px;
+  
+  opacity:0.6;
+  -moz-border-radius:5px 0 0 5px;
+  -webkit-border-radius:5px 0 0 5px; 
+  border-radius:5px 0 0 5px;
+}
+.trigger-happy-item-desc .tabs-lang li.ui-state-hover a, .trigger-happy-item-desc .tabs-lang li.ui-state-focus a{
+  opacity:1;
+}
+.trigger-happy-item-desc .tabs-lang li.ui-state-active a{
+  border:1px solid #849BB2;
+  border-right-color:#EFF3F7;
+  opacity:1;
+}
+</style>
+ 
+            <div class="jumbotron">
+                <h2>Trigger Happy</h2>
+                <div class="trigger-happy-item-desc section">
+                <ul class="tabs-lang">
+                    <li><a href="#desc_en_1" title="View the english description"><img alt="view the english description"  src="/static/images/gb.gif"/></a></li>
+                    <li><a href="#desc_fr_1" title="voir la description française"><img alt="voir la description française" src="/static/images/fr.gif"/></a></li>
+                </ul>
+                 <div id="desc_en_1" class="desc lang">
+
+                    <h3>What is this ?</h3>
+                     <p>As it exists tools to make his blog or website or even his own cloud system, "Trigger Happy" is a <a href="http://en.wikipedia.org/wiki/Free_software">free software</a> that provides a micro <a href="http://en.wikipedia.org/wiki/Enterprise_service_bus" title="definition of the enterprise service bus">Enterprise service bus (ESB)</a>, if you know IFTTT, imagine TriggerHappy as his opensource brother ;)</p>
+                    <h3>How does it work ? </h3>
+                    <p>Trigger Happy enters in a new category of tools which permits to manage the connection between internet services, as a bridge between them, and will act from events triggered:
+                        <ul>
+                            <li>on the web</li>
+                            <li>on your own "internet" accounts</li>
+                        </ul>
+                        <p>
+                            Examples :
+                            <ul>
+                                <li>When a news is published on a website, I want it to be stored in my Evernote or Pocket account to be read later, or published it on Twitter, or on my Facebook wall, etc...</li>
+                                <li>when I add a note to my Evernote account, I want to send it to my Pocket account also</li>
+                                <li>When a tweet about a specific subject is published, send it to my Pocket/Evernote/Whatever account</li>
+                                <li>When you create a card on Trello, create an issue to your Github project</li>
+                                <li>etc…</li>
+                            </ul>
+                            All of this is widely inspired by the very great IFTTT service which permits that exchanges.
+                    </p>
+                    <h3>What services are availables ?</h3>
+                    <p>You can make communicate with each other, the internet services <a href="https://evernote.com" title="Remember everything">Evernote</a>, <a href="https://readability.com">Readability</a>, <a href="http://getpocket.com/">Pocket</a> , <a href="https://trello.com">Trello</a>, <a href="https://twitter.com">Twitter</a>, <a href="https://wallabag.org">Wallabag</a> and <a href="https://github.com">GitHub</a> and take advantage of all RSS feeds. Except RSS, you will have to own an account on each of this internet services.</p>
+                    <h3>What If I wish to install "Trigger Happy" on my own ?</h3>
+                    <p>If you have <a href="http://python.org" title="Python">Python</a>/<a href="https://www.djangoproject.com/" title="Web Framework for perfectionists with deadlines">Django</a> skills, I invite you to read <a href="http://trigger-happy.readthedocs.org/en/latest/index.html">the documentation</a> which details all of this.</p>
+                    <h3>How is this service born ?</h3>
+                    <p>Following setbacks with a service called IFTTT which made unreadable notes (because it did not handle accented characters UTF-8), the decision was made to launch a free alternative.</p>
+                </div>
+                <div id="desc_fr_1" class="desc lang">
+
+                    <h3>Qu'est-ce ?</h3>
+                    <p>Tout comme il existe des outils pour produire son blog ou encore son site ou bien son système "cloud", "Trigger Happy" est un <a href="http://fr.wikipedia.org/wiki/Logiciel_libre" title="dénition d'un projet de logicel libre">projet libre</a> fournissant une micro <a href="http://fr.wikipedia.org/wiki/Enterprise_service_bus" title="définition de l'enterperise service bus">ESB : entreprise service bus</a>, si vous connaissez déjà IFTTT, considerez TirggerHappy comme son petit frère "opensource"</p>
+
+</p>
+                    <h3>Comment ça marche ? </h3>
+                        <p>Trigger Happy entre dans une nouvelle catégorie d’outils vous permettant de gérer cette fois ci l’interconnexion de services internet, comme un pont entre eux, et agira en fonction d’évènements :
+                        <ul>
+                            <li>sur la toile</li>
+                            <li>sur vos propres comptes « internet »</li>
+                        </ul>
+                        <p>
+                            Exemples :
+                            <ul>
+                                <li>Quand une nouvelle est publiée sur un site web, je souhaite qu’elle soit stockée dans mon compte Evernote ou Pocket, publiée sur Twitter, son mur Facebook, etc…</li>
+                                <li>Quand j’ajoute une note dans mon compte Evernote, je souhaite l’envoyer dans mon compte Pocket</li>
+                                <li>Quand un tweet sur un sujet tombe, l’envoyer dans mon compte Pocket/Evernote/Whatever</li>
+                                <li>Quand vous créez une carte Trello, cela créé un ticket sur votre projet GitHub</li>
+                                <li>etc…</li>
+                            </ul>
+                            Tout ceci est très largement inspiré du très bon service IFTTT permettant ces échanges.
+                        </p>
+ 
+                    <h3>Quels services sont disponibles ?</h3>
+                    <p>Vous pouvez faire communiquer entre eux les services internet <a href="https://evernote.com" title="Souvenez vous de tout avec Evernote">Evernote</a>, <a href="https://readability.com">Readability</a>, <a href="http://getpocket.com/">Pocket</a>, <a href="https://trello.com">Trello</a>, <a href="https://twitter.com">Twitter</a>, <a href="https://wallabag.org">Wallabag</a> et <a href="https://github.com">GitHub</a> et tirer parti de tout flux RSS. Hormi RSS, il vous faudra posseder un compte sur chacun des services internet.</p>
+                    <h3>Je souhaite installer "Trigger Happy" chez moi ?</h3>
+                    <p>Si vous avez des compétances en <a href="http://python.org" title="langage de programmation Python">Python</a>/<a href="https://www.djangoproject.com/" title="Web Framework for perfectionists with deadlines">Django</a>, je vous invite à lire <a href="http://trigger-happy.readthedocs.org/en/latest/index.html">la doc</a> qui détaille tout cela.</p>
+                    <h3>Comment ce service est-il né ?</h3>
+                    <p>A la suite de déboires avec un service nommé IFTTT qui rendait des notes illisibles (car il ne gère pas les caractères accentués UTF-8), décision fut prise de lancer une alternative, libre de surcroit.</p> 
+                </div>
+            </div>
+        </div>
+    
+{% endblock %}

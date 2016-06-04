@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 
 class TriggerHappyHomeTestTemplateView(TemplateView):
-    template_name = "main.html"
+    template_name = "index.html"
 
 
 class TriggerHappyHomeTemplateView(TemplateView):

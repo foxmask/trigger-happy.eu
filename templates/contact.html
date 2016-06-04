@@ -1,60 +1,114 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load staticfiles %}
+<head>
 
-{% block title %}Contact - Trigger Happy{% endblock %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A bridge between you internet services">
+    <meta name="author" content="FoxMaSk">
 
-{% block content %}
-<style>
-.trigger-happy-item-desc .lang {margin-left:40px;}
-.trigger-happy-item-desc .ui-tabs-hide {display: none;}
+    <title>Trigger Happy</title>
 
-.trigger-happy-item-desc .tabs-lang{
-  float:left;
-  list-style:none;
-  margin:0;
-  border-right:1px solid #849BB2;
-}
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
 
-.trigger-happy-item-desc .tabs-lang li{margin:0;}
+    <!-- Custom CSS -->
+    <link href="{% static "css/business-casual.css"%}" rel="stylesheet">
 
-.trigger-happy-item-desc .tabs-lang a{
-  position:relative;
-  left:1px;
-  display: block;
-  padding:4px 4px 3px;
-  border:1px solid #EFF3F7;
-  border-right-color:#849BB2;
-  line-height:12px;
-  
-  opacity:0.6;
-  -moz-border-radius:5px 0 0 5px;
-  -webkit-border-radius:5px 0 0 5px; 
-  border-radius:5px 0 0 5px;
-}
-.trigger-happy-item-desc .tabs-lang li.ui-state-hover a, .trigger-happy-item-desc .tabs-lang li.ui-state-focus a{
-  opacity:1;
-}
-.trigger-happy-item-desc .tabs-lang li.ui-state-active a{
-  border:1px solid #849BB2;
-  border-right-color:#EFF3F7;
-  opacity:1;
-}
-</style>
- 
-            <div class="jumbotron">
-                <h2>Trigger Happy</h2>
-                <div class="trigger-happy-item-desc section">
-                <ul class="tabs-lang">
-                    <li><a href="#desc_en_1" title="View the english description"><img alt="view the english description"  src="https://trigger-happy.eu/static/images/gb.gif"/></a></li>
-                    <li><a href="#desc_fr_1" title="voir la description française"><img alt="voir la description française" src="https://trigger-happy.eu/static/images/fr.gif"/></a></li>
+
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Trigger Happy</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Trigger Happy</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="https://blog.trigger-happy.eu">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/contactus/">Contact</a>
+                    </li>
                 </ul>
-                <div id="desc_en_1" class="desc lang">
-                    <h3>You want to contact us ?</h3>
-                    <p>Mail us at <span class="label label-info">service @ trigger-happy dot eu</span>, and it will be a pleasure to answer you. </p>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Contact
+                        <strong>trigger happy</strong>
+                    </h2>
+                    <hr>
                 </div>
-                <div id="desc_fr_1" class="desc lang">
-                    <h3>Vous souhaitez nous contacter ?</h3>
-                    <p>Ecrivez nous à <span class="label label-info">service @ trigger-happy point eu</span>, et nous nous ferons un plaisir de vous répondre. </p>
+                <div class="col-md-offset-4 col-md-4">
+                    <p>
+                    Mail us at service @ trigger-happy dot eu, and it will be a pleasure to answer you. 
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Trigger Happy 2014-2016</p>
                 </div>
             </div>
-    
-{% endblock %}
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static "js/jquery.js"%}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+
+</body>
+
+</html>

@@ -66,3 +66,5 @@ target/
 local_settings.py
 # https:P
 .well-known
+static/stats
+static/django-paris-novembre-2014

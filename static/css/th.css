@@ -1,45 +1,28 @@
 body {
-	padding-top: 70px;
-	padding-bottom: 30px;
+    padding-top: 70px;
+    padding-bottom: 30px;
 }
 
 h1 {
-	background-image: url('/static/images/glyphicons_061_keynote.png');
-	background-repeat: no-repeat;
-	background-position:left bottom;
-	text-indent: 30px;
-	height: 30px;
+    background-image: url('/static/images/glyphicons_061_keynote.png');
+    background-repeat: no-repeat;
+    background-position:left bottom;
+    text-indent: 30px;
+    height: 30px;
 }
 
 
-li { 
+li {
     list-style: none;
 }
 
-.th-head {
-    position: relative;
-    text-align: center;
-    padding: 80px;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4;
-    margin-bottom: 20px;
-}
-
-.th-home {
-    padding-bottom: 100px;
-    padding-top: 100px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-}
 
 /****
  * shared propery : trigger-record-* & profile-*
  */
 
 
-.trigger-record, .service-record, .wizard-fieldset, .trigger-summary  {
+.trigger-record, .service-record, .wizard-fieldset  {
     background-color: white;
     border-radius: 5px 5px 5px 5px;
     color: #6B6B6B;
@@ -49,32 +32,44 @@ li {
     border: 1px solid #DDDDDD;
 }
 
-
-.trigger-record-user {
-	background-image: url('/static/images/glyphicons_003_user.png');
+.trigger-disable {
+    border: 1px solid #AAA;
+    color: #AAA;
 }
 
 .trigger-record-user {
-	text-indent: 25px;
-	background-repeat: no-repeat;	
-} 
+    background-image: url('/static/images/glyphicons_003_user.png');
+}
+
+.trigger-record-user {
+    text-indent: 25px;
+    background-repeat: no-repeat;
+}
 
 /****
  * History
  */
 
 .trigger-record footer {
-	font-size: small;
-    vertical-align: text-bottom;
+    font-size: small;
+    display: block;
+}
+
+.trigger-record footer p {
+  padding-top: 5px;
 }
 
 .trigger-record .trigger-text {
     word-wrap: break-word;
 }
 
-.trigger-summary {
-    text-align: right;
+
+@media (max-width: 768px) {
+  .trigger-record .trigger-text .trigger-button {
+    padding-top: 0px;
+  }
 }
+
 
 .charWarning {
     color:#600;
@@ -85,21 +80,21 @@ li {
 }
 
 #histo_text {
-	width: 90%;
+    width: 90%;
 }
 
 /****
- * wizard 
+ * wizard
  */
 #trigger-content fieldset {
     border-radius: 5px 5px 5px 5px;
-    border: 1px solid #DDDDDD;  
+    border: 1px solid #DDDDDD;
     padding: 10px;
 }
 
 
 /****
- * Menu 
+ * Menu
  */
 
 /***
@@ -113,6 +108,4 @@ li {
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
-
-
 

@@ -2,7 +2,6 @@
 from __future__ import absolute_import
 import sys
 import os
-#sys.path.insert(0, os.path.join(os.path.dirname(__file__) + '/../', 'vendors'))
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -22,7 +21,7 @@ TIME_ZONE = 'Europe/Paris'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'fr-fr'
 
-# SITE_ID = 1
+SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -85,6 +84,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
 )
 
 ROOT_URLCONF = 'th.urls'
@@ -115,10 +115,22 @@ INSTALLED_APPS = (
     'th_holidays',
     'th_pelican',
     'th_wallabag',
+    'th_instapush',
+    'th_pushbullet',
+    'th_todoist',
 
 #    'haystack',
 #    'th_search',
     'gunicorn',
+
+    # django-allauth
+    'allauth',
+    'allauth.account',
+    # 'allauth.socialaccount',
+    
+    # sitemaps 
+    'django.contrib.sitemaps',
+
 )
 
 # Ajoutez raven a la liste des applications installees
@@ -127,7 +139,8 @@ INSTALLED_APPS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     # get the Site information anywhere arround the page
-    'django.core.context_processors.request'
+    'django.core.context_processors.request',
+    'django.template.context_processors.request',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -309,6 +322,39 @@ CACHES = {
             'MAX_ENTRIES': 10000,
         }
     },
+    'th_instapush':
+    {
+        'TIMEOUT': 3600,
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://localhost:6379/9",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            'MAX_ENTRIES': 10000,
+        }
+    },
+ 
+    'th_todoist':
+    {
+        'TIMEOUT': 3600,
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://localhost:6379/9",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            'MAX_ENTRIES': 10000,
+        }
+    },
+ 
+    'th_pushbullet':
+    {
+        'TIMEOUT': 3600,
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://localhost:6379/9",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            'MAX_ENTRIES': 10000,
+        }
+    },
+ 
     'th_wallabag':
     {
         'TIMEOUT': 3600,
@@ -356,9 +402,33 @@ TH_SERVICES = (
     'th_trello.my_trello.ServiceTrello',
     'th_pelican.my_pelican.ServicePelican',
     'th_wallabag.my_wallabag.ServiceWallabag',
+    'th_todoist.my_todoist.ServiceTodoist',
+    'th_pushbullet.my_pushbullet.ServicePushbullet',
+    'th_instapush.my_instapush.ServiceInstapush',
 )
 
 TH_PELICAN_AUTHOR = 'FoxMaSk'
+
+
+
+# DJANGO-ALLAUTH
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_CONFIRMATION_HMAC = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_REQUIRED = True
+# DJANGO-ALLAUTH
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+
 # local settings management
 try:
     from .local_settings import *

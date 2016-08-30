@@ -20,3 +20,6 @@ class TriggerHappyDevsTemplateView(TemplateView):
 class TriggerHappyContactTemplateView(TemplateView):
     template_name = "contact.html"
 
+class TriggerHappyPrivacyTemplateView(TemplateView):
+    template_name = "privacy.html"
+

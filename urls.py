@@ -10,6 +10,7 @@ from th.views import TriggerHappyInfosTemplateView,\
 TriggerHappyDevsTemplateView,\
 TriggerHappyContactTemplateView,\
 TriggerHappyHomeTemplateView,\
+TriggerHappyPrivacyTemplateView,\
 TriggerHappyHomeTestTemplateView
 
 # sitemaps
@@ -39,6 +40,7 @@ urlpatterns = [
         url (r'^infos/$', TriggerHappyInfosTemplateView.as_view(), name='infos'),
         url (r'^dev/$', TriggerHappyDevsTemplateView.as_view(), name='dev'), 
         url (r'^contactus/$', TriggerHappyContactTemplateView.as_view(), name='contactus'),
+        url (r'^privacy/$', TriggerHappyPrivacyTemplateView.as_view(), name='privacy'),
         url (r'^$', TriggerHappyHomeTemplateView.as_view(), name="th_home"),
 
         # ****************************************
